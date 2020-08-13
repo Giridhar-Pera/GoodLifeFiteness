@@ -24,7 +24,7 @@ SECRET_KEY = 'q_*fwrwt4lx6u$f0)d=t8jrc-p$x$x6#*g_*)ui3w4%nxp4x4)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['good-life-fitness.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
