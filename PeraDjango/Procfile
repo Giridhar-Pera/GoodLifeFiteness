@@ -1,0 +1,1 @@
+web: gunicorn PeraDjango.wsgi --log-file -

@@ -1,0 +1,70 @@
+
+<!doctype html>
+<!--<title>Form template with CSS grid auto placement</title><base href="https://www.quackit.com" target="_blank">-->
+<!--<link href="https://fonts.googleapis.com/css?family=Unkempt" rel="stylesheet">-->
+<style>
+  .myForm > * {
+   font: 1.4em 'Unkempt', sans-serif;
+  }
+  .myForm {
+    display: grid;
+    grid-template-columns: [labels] auto [controls] 1fr;
+    grid-auto-flow: row;
+    grid-gap: .8em .5em;
+    background: beige;
+    padding: 1.2em;
+    width: 36em;
+  }
+  .myForm > label,
+  .myForm > fieldset  {
+    grid-column: labels;
+    grid-row: auto;
+  }
+  .myForm > input,
+  .myForm > select,
+  .myForm > textarea {
+    grid-column: controls;
+    grid-row: auto;
+    padding: .4em;
+    border: 0;
+  }
+  .myForm > fieldset,
+  .myForm > button {
+    grid-column: span 2;
+  }
+  .myForm > button {
+    padding: 1em;
+    background: darkkhaki;
+    border: 0;
+    color: white;
+    }
+  .myForm > textarea {
+    min-height: 3em;
+    }
+</style>
+<form class="myForm" action="/results/" style="text-align:center" method="post"> {% csrf_token %}
+  <label for="customer_name">Name </label>
+  <input type="text" name="customer_name" id="customer_name" required>
+
+  <label for="email_address">Email </label>
+  <input type="email" name="email_address" id="email_address" required>
+
+  <fieldset>
+    <legend>Gender</legend>
+    <label> <input type="radio" name="gender" id="taxi_car" required value="male"> Male </label>
+    <label> <input type="radio" name="gender" id="taxi_van" required value="female"> Female </label>
+  </fieldset>
+
+     <label for="customer_age">Age </label>
+  <input type="text" name="customer_age" id="customer_age" required>
+
+    <label for="customer_name">Height </label>
+  <input type="text" name="customer_height" id="customer_name" placeholder="in inches" required>
+
+    <label for="customer_name">Weight </label>
+  <input type="text" name="customer_weight" id="customer_name"  placeholder="in pounds" required>
+
+
+  <button>Get Results</button>
+
+</form>
